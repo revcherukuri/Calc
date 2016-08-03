@@ -60,7 +60,7 @@ public class calc
 		}
 		else if(function.equalsIgnoreCase("-"))
 		{
-			System.out.println("Please enter you first nu5mber");
+			System.out.println("Please enter you first number");
 			double number = read.nextDouble();
 			System.out.println("Please enter your second number");
 			double number1 = read.nextDouble();
@@ -75,12 +75,31 @@ public class calc
 			{
 				System.out.println("Please enter your third number");
 			    double number2 = read.nextDouble();
-			    System.out.println("Please enter your fourth number, and if you dont have one enter 0");
-			    double number3 = read.nextDouble();
-			    System.out.println("Please enter your fifth number, and if you dont have one enter 0");
-			    double number4 = read.nextDouble();
-			    double sum = (number - number1 - number2 - number3 - number4);
-			    System.out.println("Your differnce is " + sum);
+			    System.out.println("Please enter your fourth number, and if you dont have one press enter");
+			    read.nextLine();
+			    String answer3 = read.nextLine();
+			    double number3 = 0;
+			    if(answer3.equals("")){
+			    	double sum = (number - number1 - number2);
+			    	System.out.println("Your difference is " + sum);
+			    }
+			    else{
+			    	number3 = Double.parseDouble(answer3);
+			    	System.out.println("Please enter your fifth number, and if you dont have one press enter");
+				    String answer4 = read.nextLine();
+				    double number4 = 0;
+				    if(answer4.equals("")){
+				    	double sum = (number - number1 - number2 - number3);
+				    	System.out.println("Your difference is " + sum);
+				    }
+				    else{
+				    	number4 = Double.parseDouble(answer4);
+				    	double sum = (number - number1 - number2 - number3 - number4);
+				    	System.out.println("Your differnce is " + sum);
+				    }
+				    
+			    }
+			    
 			}
 		}
 		else if(function.equals("x"))
